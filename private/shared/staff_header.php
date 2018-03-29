@@ -1,0 +1,29 @@
+<?php
+  if(!isset($page_title)) {
+    $page_title = 'Staff Area';
+  }
+?>
+
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <title>GBI - <?php echo $page_title; ?></title>
+    <meta charset="utf-8">
+    <!-- example using the function -->
+    <link rel="stylesheet" href="<?php echo url_for('stylesheets/staff.css'); ?>">
+  </head>
+
+  <body>
+
+    <header>
+      <h1>GBI Staff Area</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <!-- example without the function -->
+        <li><a href="<?php echo WWW_ROOT . "/staff/index.php"; ?>">Menu</a></li>
+      </ul>
+    </nav>
