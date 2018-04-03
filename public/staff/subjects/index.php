@@ -1,5 +1,4 @@
 <?php require_once('../../../private/initialize.php'); ?>
-    <!-- variables declared here will be aviable in the files "included" below -->
 
 <?php
 // fake database
@@ -40,7 +39,7 @@
           <td><?php echo $subject['position']; ?></td>
           <td><?php echo $subject['visible'] == 1 ? 'true' : 'false'; ?></td>
     	    <td><?php echo $subject['menu_name']; ?></td>
-          <td><a class="action" href="<?php echo url_for('/staff/subjects/show.php?id=' . $subject['id']) ?>">View</a></td>
+          <td><a class="action" href="<?php echo url_for('/staff/subjects/show.php?id=' . $subject['id']); ?>">View</a></td>
           <td><a class="action" href="">Edit</a></td>
           <td><a class="action" href="">Delete</a></td>
     	  </tr>
