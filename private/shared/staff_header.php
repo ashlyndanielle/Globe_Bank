@@ -9,7 +9,8 @@
 
 <html lang="en">
   <head>
-    <title>GBI - <?php echo $page_title; ?></title>
+    <!-- there *could* be a use for dynamic data in the title so use the html escape -->
+    <title>GBI - <?php echo h($page_title); ?></title>
     <meta charset="utf-8">
     <!-- example using the function -->
     <link rel="stylesheet" href="<?php echo url_for('stylesheets/staff.css'); ?>">

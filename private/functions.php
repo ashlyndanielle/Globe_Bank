@@ -21,4 +21,23 @@
   function h($string="") {
     return htmlspecialchars($string);
   }
+
+  function error_404() {
+    // safer to use $_SERVER["SERVER_PROTOCOL"] instead of "HTTP/1.1 404 Not Found" incase
+    // it ever changes
+    header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
+    // you could render a 404 php page here instead if you wish
+    exit();
+  }
+
+  function error_500() {
+    header($_SERVER["SERVER_PROTOCOL"] . " 500 Internal Server Error");
+    exit();
+  }
+
+  // redirect function
+  function redirect_to($location) {
+    return header('Location: ' . $location);
+    exit();
+  };
 ?>

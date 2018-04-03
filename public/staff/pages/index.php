@@ -30,11 +30,12 @@
 
       <?php foreach($pages as $page) { ?>
         <tr>
-          <td><?php echo $page['id']; ?></td>
-          <td><?php echo $page['position']; ?></td>
-          <td><?php echo $page['visible']; ?></td>
-          <td><?php echo $page['menu_name']; ?></td>
-          <td><a class="action" href="<?php echo url_for('/staff/pages/show.php?id=') . $page['id']; ?>">View</a></td>
+          <td><?php echo h($page['id']); ?></td>
+          <td><?php echo h($page['position']); ?></td>
+          <!-- there is total control over 'visible' because we are setting the value there -->
+          <td><?php echo $page['visible'] == '1' ? 'true' : 'false'; ?></td>
+          <td><?php echo h($page['menu_name']); ?></td>
+          <td><a class="action" href="<?php echo url_for('/staff/pages/show.php?id=') . h(u($page['id'])); ?>">View</a></td>
           <td><a class="action" href="">Edit</a></td>
           <td><a class="action" href="">Delete</a></td>
         </tr>

@@ -1,5 +1,8 @@
 <?php
 
+  // output buffering is turned on
+  ob_start();
+
   // *** THESE ARE NOT TO BE USED FOR LINKS *** //
   // Assign file paths to PHP constants
   // __FILE__ returns the current path to this file
