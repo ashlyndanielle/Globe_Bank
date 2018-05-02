@@ -5,6 +5,7 @@
     if($script_path[0] != '/') {
       $script_path = '/' . $script_path;
     }
+    // url path up to public + $script_path
     return WWW_ROOT . $script_path;
   }
 

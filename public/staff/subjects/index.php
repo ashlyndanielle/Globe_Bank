@@ -1,7 +1,7 @@
 <?php require_once('../../../private/initialize.php'); ?>
 
 <?php
-// fake database
+// fake database with associative array
   $subjects = [
     ['id' => '1', 'position' => '1', 'visible' => '1', 'menu_name' => 'About Globe Bank'],
     ['id' => '2', 'position' => '2', 'visible' => '1', 'menu_name' => 'Consumer'],
