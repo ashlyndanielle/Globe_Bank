@@ -6,10 +6,10 @@
 
   <a class="action" href="<?php echo url_for('/staff/subjects/index.php'); ?>">&laquo; Back to List</a><br>
   <?php
-  // built in get function returns items from the url in an associative array
-  
+  // built in get function returns parameters from the url in an associative array
     $id = isset($_GET['id']) ? $_GET['id'] : '1';
-    // for php 7 and up you can use the below statement
+    // for php 7 and up you can use the below statement meaning if there is a value
+    // there, use it, if there isn't a value there, use the second option ( 1 in this case )
     // $id = $_GET['id'] ?? '1';
   
     // help with cross-site scripting
