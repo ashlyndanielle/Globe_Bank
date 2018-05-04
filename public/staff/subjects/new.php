@@ -24,7 +24,7 @@
   <div class="subject new">
     <h1>Create Subject</h1>
 
-    <form action="" method="post">
+    <form action="<?php echo url_for('/staff/subjects/create.php') ?>" method="post">
       <dl>
         <dt>Menu Name</dt>
         <dd><input type="text" name="menu_name" value="" /></dd>
@@ -40,6 +40,10 @@
       <dl>
         <dt>Visible</dt>
         <dd>
+          <!-- Having this hidden input insures that if the checkbox isn't checked
+          a value will still be sent for "visible".  This works because if the visible
+          checkbox is checked, because it's further down the page, the value for visible sent
+          will be '1'. -->
           <input type="hidden" name="visible" value="0" />
           <input type="checkbox" name="visible" value="1" />
         </dd>
