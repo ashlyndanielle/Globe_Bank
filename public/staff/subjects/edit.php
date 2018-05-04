@@ -5,10 +5,13 @@
   // if there is no 'id' parameter in the url, redirect to subject list
   if (!isset($_GET['id'])) {
     redirect_to(url_for('/staff/subjects/index.php'));
-  } else {
-    // otherwise set $id variable
-    $id = $_GET['id'];
   }
+  
+  $id = $_GET['id'];
+  // initialize these with default values
+  $menu_name = '';
+  $position = '';
+  $visible = '';
 
   // if this is a post request, process the form
   if (is_post_request()) {
@@ -22,9 +25,8 @@
     echo 'Menu name: ' . $menu_name . '<br>';
     echo 'Position: ' . $position . '<br>';
     echo 'Visible: ' . $visible . '<br>';
-  } else {
-    // if it's not, then display the page
   }
+  // if it's not, then just display the page
 ?>
 
 <?php	$page_title = 'Edit Subject' ?>
@@ -39,7 +41,7 @@
     <form action="<?php echo url_for('/staff/subjects/edit.php?id=' . htmlspecialchars(urlencode($id))); ?>" method="post">
       <dl>
         <dt>Menu Name</dt>
-        <dd><input type="text" name="menu_name" value="" /></dd>
+        <dd><input type="text" name="menu_name" value="<?php echo $menu_name ?>" /></dd>
       </dl>
       <dl>
         <dt>Position</dt>
