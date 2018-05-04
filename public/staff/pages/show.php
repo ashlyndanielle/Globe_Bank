@@ -11,7 +11,7 @@
     // null coalescing operator
     $id = $_GET['id'] ?? '1';
   
-    echo "Page ID: " . h($id);
+    echo "Page ID: " . htmlspecialchars($id);
   ?>
 
 </div>

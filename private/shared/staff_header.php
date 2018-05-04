@@ -13,6 +13,7 @@
     <title>GBI - <?php echo h($page_title); ?></title>
     <meta charset="utf-8">
     <!-- example using the function -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo url_for('stylesheets/staff.css'); ?>">
   </head>
 

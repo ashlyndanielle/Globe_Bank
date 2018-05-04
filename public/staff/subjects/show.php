@@ -13,7 +13,7 @@
     $id = $_GET['id'] ?? '1';
   
     // help with cross-site scripting
-    echo 'Subject ID: ' . h($id);
+    echo 'Subject ID: ' . htmlspecialchars($id);
   ?>
   <br>
 </div>

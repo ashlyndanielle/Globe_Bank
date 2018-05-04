@@ -10,13 +10,13 @@
   // __FILE__ returns the current path to this file
   // dirname() returns the path to the parent directory
   define("PRIVATE_PATH", dirname(__FILE__)); // finds THIS file's location and get it's directory (in this case, private)
-  // /globe_bank/private
+  // /globe_bank/private^^
   define("PROJECT_PATH", dirname(PRIVATE_PATH));  // one directory above this directory (globe_bank)
-  // /globe_bank
+  // /globe_bank^^
   define("PUBLIC_PATH", PROJECT_PATH . '/public');
-  // /globe_bank/public
+  // /globe_bank/public^^
   define("SHARED_PATH", PRIVATE_PATH . '/shared');
-  // /globe_bank/private/shared
+  // /globe_bank/private/shared^^
 
 
   // *** THESE ARE BROWSER PATHS *** //

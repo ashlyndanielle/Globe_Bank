@@ -2,10 +2,8 @@
 
   require_once('../../../private/initialize.php');
   $test = $_GET['test'] ?? '';
+  $subject_id = $_GET['id'] ?? '1';
 
-  // remember that there can't be any whitespace in the html if we are to modify
-  // the headers so put this in one single php tag so there isn't any accidental
-  // whitespace in the html
   if($test == '404') {
     error_404();
   } elseif( $test == '500' ) {
@@ -15,14 +13,14 @@
   }
 ?>
 
-<?php	$page_title = 'Create Subject' ?>
+<?php	$page_title = 'Edit Subject' ?>
 <?php	include(SHARED_PATH . '/staff_header.php') ?>
 
 <div id="content">
-  <a class="back-link" href="<?php echo url_for('/staff/subjects/index.php'); ?>">&laquo; Back to List</a>
-  
+  <a class="back-link" href="<?php echo url_for('/staff/subjects/index.php') ?>">&laquo; Back to List</a>
+
   <div class="subject new">
-    <h1>Create Subject</h1>
+    <h1>Edit Subject <?php echo htmlspecialchars($subject_id); ?></h1>
 
     <form action="" method="post">
       <dl>
@@ -45,7 +43,7 @@
         </dd>
       </dl>
       <div id="operations">
-        <input type="submit" value="Create Subject" />
+        <input type="submit" value="Edit Subject" />
       </div>
     </form>
   </div>
