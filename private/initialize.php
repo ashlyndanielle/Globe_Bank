@@ -1,6 +1,8 @@
 <?php
 
   // output buffering is turned on
+  // need to add this before any output
+  // placing it here because all of our php files are calling this file
   ob_start();
 
   // *** THESE ARE NOT TO BE USED FOR LINKS, THESE ARE FILE PATHS *** //

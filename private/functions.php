@@ -1,5 +1,6 @@
 <?php
 
+  // find browser url for path starting from public
   function url_for($script_path) {
     // add the leading '/' if not present
     if($script_path[0] != '/') {
@@ -9,16 +10,18 @@
     return WWW_ROOT . $script_path;
   }
 
-  // shorter function call for urlencode for ease of use
+  // shorter function call for urlencode (query string)
   function u($string="") {
     return urlencode($string);
   }
 
-  // shorter call for rawurlencode
+  // shorter call for rawurlencode (path string)
   function raw_u($string="") {
     return rawurldecode($string);
   }
-
+  // shorter call for dynamic html protection
+  // use anytime you're rendering data that comes from elsewhere
+  // ( from a user, database, cookie... )
   function h($string="") {
     return htmlspecialchars($string);
   }

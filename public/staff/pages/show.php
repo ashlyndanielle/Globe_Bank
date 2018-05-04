@@ -4,9 +4,11 @@
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 <div id="content">
 
-  <a class="back-link" href="<?php echo url_for('/staff/pages/index.php'); ?>">&laquo; Back to List</a><br>
+  <a class="back-link" href="<?php echo url_for('/staff/pages/index.php'); ?>">
+  &laquo; Back to List</a><br>
   
   <?php
+    // null coalescing operator
     $id = $_GET['id'] ?? '1';
   
     echo "Page ID: " . h($id);

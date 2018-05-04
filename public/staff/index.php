@@ -14,7 +14,7 @@
           /subjest/index.php will go to localhost/subjects/index.php instead of
           going to http://localhost/~ashlynmitros/globe_bank/public/staff/subjects/index.php
         -->
-        <li><a href="<?php echo url_for("/staff/subjects/index.php")?>">Subjects</a></li>
+        <li><a href="<?php echo url_for("/staff/subjects/index.php")?>">Subjects</a></li>        
         <li><a href="<?php echo url_for("/staff/pages/index.php")?>">Pages</a></li>
       </ul>
     </div>
