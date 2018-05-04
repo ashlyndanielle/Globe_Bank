@@ -1,15 +1,29 @@
 <?php 
 
   require_once('../../../private/initialize.php');
-  $test = $_GET['test'] ?? '';
-  $subject_id = $_GET['id'] ?? '1';
 
-  if($test == '404') {
-    error_404();
-  } elseif( $test == '500' ) {
-    error_500();
-  } elseif ($test == 'redirect') {
+  // if there is no 'id' parameter in the url, redirect to subject list
+  if (!isset($_GET['id'])) {
     redirect_to(url_for('/staff/subjects/index.php'));
+  } else {
+    // otherwise set $id variable
+    $id = $_GET['id'];
+  }
+
+  // if this is a post request, process the form
+  if (is_post_request()) {
+    // handle form values sent by new.php
+
+    $menu_name = $_POST['menu_name'] ?? '';
+    $position = $_POST['position'] ?? '';
+    $visible = $_POST['visible'] ?? '';
+
+    echo 'Form parameters<br>';
+    echo 'Menu name: ' . $menu_name . '<br>';
+    echo 'Position: ' . $position . '<br>';
+    echo 'Visible: ' . $visible . '<br>';
+  } else {
+    // if it's not, then display the page
   }
 ?>
 
@@ -20,9 +34,9 @@
   <a class="back-link" href="<?php echo url_for('/staff/subjects/index.php') ?>">&laquo; Back to List</a>
 
   <div class="subject new">
-    <h1>Edit Subject <?php echo htmlspecialchars($subject_id); ?></h1>
+    <h1>Edit Subject <?php echo htmlspecialchars($id); ?></h1>
 
-    <form action="" method="post">
+    <form action="<?php echo url_for('/staff/subjects/edit.php?id=' . htmlspecialchars(urlencode($id))); ?>" method="post">
       <dl>
         <dt>Menu Name</dt>
         <dd><input type="text" name="menu_name" value="" /></dd>

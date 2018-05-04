@@ -44,4 +44,13 @@
     return header('Location: ' . $location);
     exit();
   };
+
+  // check if a request is POST
+  function is_post_request() {
+    return ($_SERVER['REQUEST_METHOD'] == 'POST');
+  }
+  // check if request is GET
+  function is_get_request() {
+    return ($_SERVER['REQUEST_METHOD'] == 'GET');
+  }
 ?>
